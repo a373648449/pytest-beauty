@@ -17,6 +17,7 @@ def get_all_user_info():
         result.error = "接口返回码是 【 {} 】, 返回信息：{} ".format(res.json()["code"], res.json()["msg"])
     result.msg = res.json()["msg"]
     result.response = res
+
     return result
 
 
