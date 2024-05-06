@@ -22,7 +22,7 @@ def get_data(yaml_file_name):
 base_data = get_data("base_data.yml")
 api_data = get_data("api_test_data.yml")
 scenario_data = get_data("scenario_test_data.yml")
-
+chapter_data = get_data("chapter_test_data.yml")
 
 @allure.step("前置步骤 ==>> 清理数据")
 def step_first():

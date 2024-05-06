@@ -12,11 +12,17 @@ class User(RestClient):
     def __init__(self, api_root_url, **kwargs):
         super(User, self).__init__(api_root_url, **kwargs)
 
-    def register(self, **kwargs):
-        return self.get("/loginOrRegister", **kwargs)
+    #修改用户信息
+    def editUserInfo(self, **kwargs):
+        return self.post("/user/editUserInfo", **kwargs)
 
+    #微信用户注册
+    def register(self, **kwargs):
+        return self.get("/user/loginOrRegister", **kwargs)
+
+    #获取用户信息
     def login(self, **kwargs):
-        return self.post("/login", **kwargs)
+        return self.get("/user/uinfo", **kwargs)
 
 
 user = User(api_root_url)

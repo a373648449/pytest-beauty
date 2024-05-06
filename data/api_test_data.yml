@@ -10,11 +10,10 @@ test_get_get_one_user_info:
   - ["wintest1111", False, "1004", "查不到相关用户"]
 
 test_register_user:
-  # 用户名,密码,手机号,性别,联系地址,期望结果,期望返回码,期望返回信息
-  # username, password, telephone, sex, address, except_result, except_code, except_msg
-  - ["测试test", "123456", "13599999999", "1", "深圳市宝安区", True, 0, "注册成功"]
-  - ["测试test", "123456", "13599999999", "3", "深圳市宝安区", False, 2003, "输入的性别只能是 0(男) 或 1(女)"]
-  - ["wintest4", "123456", "13599999999", "1", "深圳市宝安区", False, 2002, "用户名已存在"]
+  # 头,app属性名,token,性别
+  # Client-Agent, appletsName, token, wxCode
+  - ["b35d7751bc8ef46b87892a6abcb8f8/5.4.6/24012216/2/17.4.1/iPhone14,5/942DF729-C03A-4705-8387-B1A1FC6D8092", "type", "13599999999"]
+
 
 test_login_user:
   # 用户名,密码,期望结果,期望返回码,期望返回信息
@@ -34,3 +33,6 @@ test_delete_user:
   # username, except_result, except_code, except_msg
   - ["测试test", True, 0, "删除用户信息成功"]
   - ["wintest3", False, 3006, "该用户不允许删除"]
+
+
+
