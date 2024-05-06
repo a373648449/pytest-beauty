@@ -26,8 +26,13 @@ class Chapter(RestClient):
         def index_test(self, **kwargs):
             return self.get("/chapter/challenge/index", **kwargs)
 
-        def list_test(selef, **kwargs):
-            return self.get("/chapter/list", **kwargs)
+        def list_test(self, pageNo, pageSize, **kwargs):
+            base_url = "/chapter/list"
+            params = {
+                "pageNo": pageNo,
+                "pageSize": pageSize
+            }
+            return self.get(base_url, params=params, **kwargs)
 
 
 chapter = Chapter(api_root_url)

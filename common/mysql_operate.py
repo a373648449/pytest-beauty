@@ -1,4 +1,3 @@
-import pymysql
 import os
 from common.read_data import data
 from common.logger import logger
